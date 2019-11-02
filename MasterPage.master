@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder id="contentTitle" runat="server">
+        <title>MyBus | Welcome</title>
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        
+    </style>
+</head>
+<body runat="server">
+    <form id="form1" runat="server">
+    <asp:Label ID="labelHeading" runat="server" Text="MyBus Ticket Booking - Bus Travels Made Easy" Font-Size="XX-Large" Font-Bold="true" />
+    <asp:Button ID="buttonTheme" CausesValidation="false" runat="server" Text="Theme Toggle" OnClick="buttonTheme_Click" />
+    <asp:Label ID="labelCurrentUser" runat="server" />
+    <br />
+        <br />
+        <br />
+    <div>
+        <asp:Button runat="server" ID="buttonHome" Text="Home" OnClick="buttonHome_Click" CausesValidation="false" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button runat="server" ID="buttonSearch" Text="Search" CausesValidation="false" OnClick="buttonSearch_Click" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button runat="server" ID="buttonProfile" Text="Profile" CausesValidation="false" OnClick="buttonProfile_Click" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button runat="server" ID="buttonLogout" Text="Logout" CausesValidation="false" OnClick="buttonLogout_Click" />
+    </div>
+    <br />
+    <br />
+    <div>
+        <asp:ContentPlaceHolder id="contentMain" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <footer style="bottom:0;position:page;left:50%;padding-bottom:20px;margin-left:600px;width:300px;text-align:center">
+        All Copyrights Reserved (2019)
+    </footer>
+</body>
+
+</html>
