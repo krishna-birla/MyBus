@@ -150,6 +150,7 @@ public partial class ProfilePage : BasePage
             return;
         }
         SqlConnection con = new SqlConnection(cons);
+        string toBeDeletedPrice = GridView1.SelectedRow.Cells[9].Text;
         if (int.Parse(textboxSeats.Text) == int.Parse(GridView1.SelectedRow.Cells[10].Text))
         {
             SqlCommand cmd = new SqlCommand("DELETE FROM Bookings WHERE Id=@bid", con);
@@ -198,7 +199,7 @@ public partial class ProfilePage : BasePage
         GridView1.DataSource = ds;
         GridView1.DataBind();
         con.Close();
-        float labelAmount = float.Parse(textboxSeats.Text) * float.Parse(GridView1.SelectedRow.Cells[9].Text);
+        float labelAmount = float.Parse(textboxSeats.Text) * float.Parse(toBeDeletedPrice);
         Application["TotalTickets"] = (int.Parse(Application["TotalTickets"].ToString()) - int.Parse(textboxSeats.Text)).ToString();
         Application["TotalRevenue"] = (float.Parse(Application["TotalRevenue"].ToString()) - labelAmount).ToString();
         seatsValidate.Visible = false;
