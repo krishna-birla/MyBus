@@ -61,8 +61,8 @@ public partial class SignUp : BasePage
             HttpCookie cookie = new HttpCookie("Autofill");
             cookie["Username"] = textboxUsername.Text;
             cookie["Password"] = textboxPassword.Text;
-            Response.Cookies.Add(cookie);
             cookie.Expires = DateTime.Now.AddSeconds(10);
+            Response.Cookies.Add(cookie);
             Response.Redirect("LoginPage.aspx");
         }
         else
